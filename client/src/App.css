@@ -1,0 +1,8 @@
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.container {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+}

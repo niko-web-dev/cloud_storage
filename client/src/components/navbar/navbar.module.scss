@@ -1,0 +1,31 @@
+@import "./src/utils/colors";
+
+.navbar {
+  background-color: $bg-color;
+  color: $fz-color;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  &__logo {
+    display: flex;
+    align-items: center;
+    color: $fz-color;
+    &__img {
+      max-width: 80px;
+      margin-right: 15px;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+  }
+  &__login {
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  &__registration {
+    cursor: pointer;
+  }
+
+}

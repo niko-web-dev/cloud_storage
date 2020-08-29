@@ -1,12 +1,22 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Navbar from "./components/navbar/Navbar"
+
+import 'normalize-css'
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import Registration from "./components/registration/Registration";
 
 function App() {
   return (
-    <div className="App">
-      Hello
-    </div>
-  );
+    <BrowserRouter>
+        <div className="App">
+          <Navbar/>
+          <Switch>
+            <Route path="/registration" component={Registration}/>
+          </Switch>
+        </div>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
