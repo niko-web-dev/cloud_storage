@@ -1,7 +1,9 @@
 const Router = require('express')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
+const config = require('config')
 
 const router = new Router()
 
@@ -26,6 +28,35 @@ router.post('/registration',
         await user.save()
         // await fileService.createDir(new File({user:user.id, name: ''}))
         res.json({message: "User was created"})
+      } catch (e) {
+        console.log(e)
+        res.send({message: "Server error"})
+      }
+    })
+
+router.post('/login',
+    async (req, res) => {
+      try {
+        const {email, password} = req.body
+        const user = await User.findOne({email})
+        if (!user) {
+          return res.status(404).json({message: "User not found"})
+        }
+        const isPassValid = bcrypt.compareSync(password, user.password)
+        if (!isPassValid) {
+          return res.status(400).json({message: "Invalid password"})
+        }
+        const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})
+        return res.json({
+          token,
+          user: {
+            id: user.id,
+            email: user.email,
+            diskSpace: user.diskSpace,
+            usedSpace: user.usedSpace,
+            avatar: user.avatar
+          }
+        })
       } catch (e) {
         console.log(e)
         res.send({message: "Server error"})
