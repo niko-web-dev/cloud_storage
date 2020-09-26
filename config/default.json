@@ -1,0 +1,6 @@
+{
+  "serverPort": 5000,
+  "dbUrl": "mongodb+srv://niko:27021988@next-auth-cluster.p8ekh.mongodb.net/nextdb?retryWrites=true&w=majority",
+  "secretKey": "my secret key"
+
+}

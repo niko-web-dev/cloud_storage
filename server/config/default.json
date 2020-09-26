@@ -1,6 +1,0 @@
-{
-  "serverPort": 5000,
-  "dbUrl": "mongodb+srv://niko:27021988@cloudstorage.t5ko6.mongodb.net/cloudDB?retryWrites=true&w=majority",
-  "secretKey": "my secret key"
-
-}
