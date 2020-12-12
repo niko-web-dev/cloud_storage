@@ -1,6 +1,7 @@
 {
   "serverPort": 5000,
-  "dbUrl": "mongodb+srv://niko:27021988@next-auth-cluster.p8ekh.mongodb.net/nextdb?retryWrites=true&w=majority",
-  "secretKey": "my secret key"
+  "dbUrl": "mongodb+srv://niko:27021988@cloud-disk.7t3kw.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "secretKey": "my secret key",
+  "filePath": "C:\\Users\\Nikol\\WebstormProjects\\mern-cloud-app\\cloud_storage\\server\\files"
 
 }
